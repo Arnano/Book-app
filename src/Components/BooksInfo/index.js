@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledBooksInfo from './style';
+import Text from '../Text';
 
 const BooksInfo = ({ author, category, classes, description, rating, title }) => 
   <StyledBooksInfo className={classes} >
     <div>
       <h1> {title} </h1>
       <h2> {author} </h2>
-      { rating && <span> rating: {rating} </span> }
+      { rating && <Text size='fsLarge'> rating: {rating} </Text> }
     </div>
     { description && <p> {description} </p> }
-    { category && <span> Category: {category} </span> }
+    { category && <Text size='fsSmall'> Category: {category} </Text> }
   </StyledBooksInfo >
 
 BooksInfo.propTypes = {

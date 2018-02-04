@@ -5,10 +5,8 @@ import StyledLoading from './style';
 import Image from '../Image';
 
 const Loading = ({ classes, children, icon }) =>
-  <StyledLoading
-    className={classes}
-    icon={icon} >
-    <Image src={icon} alt='Spinner' />
+  <StyledLoading>
+    <Image className={classes} src={icon} alt='Spinner' />
     {children}
   </StyledLoading>
 

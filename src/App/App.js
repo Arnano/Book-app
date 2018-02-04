@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import logo from './../logo.svg';
-import './App.css';
 
 import fetch from 'isomorphic-fetch';
-import spinner from '../Style/spinner.svg';
+import spinner from '../Style/assets/spinner.svg';
+import bookImg from '../Style/assets/book_3.jpg';
 
 import SearchBar from '../Components/SearchBar';
 import BooksTable from '../Components/BooksTable';
 import Books from '../Components/Books';
 import Loading from '../Components/Loading';
-import { ImageLinkNewWindow } from '../Components/Image';
+import Image, { ImageLinkNewWindow } from '../Components/Image';
 
 import {
   PATH_BASE,
@@ -94,7 +93,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Image src={bookImg} alt={'Book banner'} />
           <h1 className="App-title">Welcome to React</h1>
         </header>
           <SearchBar
@@ -104,7 +103,7 @@ class App extends Component {
               Search
           </SearchBar>
           { isFetching 
-            ? <Loading icon={spinner}> Searching your books... </Loading> 
+            ? <Loading icon={spinner}> <span> Searching your books.. </span> </Loading> 
             : (
               <BooksTable>
                 { books.map((book) => {
@@ -130,13 +129,3 @@ class App extends Component {
 }
 
 export default App;
-
-/*
-{
-  books.map((book) => {
-    return(
-      <span> {book.volumeInfo.title} </span>
-    )
-  })
-}
-*/

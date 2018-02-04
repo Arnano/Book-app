@@ -1,8 +1,8 @@
 import Styled from 'styled-components';
-import { blue } from '../../Style/colors';
+import { darkBlue } from '../../Style/colors';
 
 const StyledInput = Styled.input `
-  border: 1px solid ${blue};
+  border: 1px solid ${darkBlue};
   opacity: 0.8;
   width: 300px;
   padding: 8px 0;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Books info has a valid snapshot 1`] = `
+<div
+  className="sc-bdVaJa fePDys"
+>
+  <div>
+    <h1>
+       
+      Terrendiul
+       
+    </h1>
+    <h2>
+       
+      Arnaud
+       
+    </h2>
+    <span>
+       rating: 
+      3
+       
+    </span>
+  </div>
+  <p>
+     
+    Book about fantasy
+     
+  </p>
+  <span>
+     Category: 
+    Fantasy
+     
+  </span>
+</div>
+`;

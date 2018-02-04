@@ -1,12 +1,12 @@
 import Styled from 'styled-components';
-import { blue, darkGrey } from '../../Style/colors';
+import { blue, darkBlue } from '../../Style/colors';
 
 const StyledSearchBar = Styled.div `
   display: flex;
   flex-direction: row;
-  border: 1px solid ${darkGrey};
-  max-width: 500px;
-  margin: 20px auto;
+  border: 1px solid ${darkBlue};
+  max-width: 960px;
+  margin: 20px auto 20px 10px;
   border-radius: 4px;
 
   & input {
@@ -17,13 +17,14 @@ const StyledSearchBar = Styled.div `
     border-left: 0;
     border-bottom: 0;
     border-top: 0;
-    border-right: 1px solid ${darkGrey};
+    border-right: 1px solid ${darkBlue};
   }
 
   & button {
     background: ${blue};
     color: white;
     width: 30%;
+    border: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }

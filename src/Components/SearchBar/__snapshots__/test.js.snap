@@ -2,10 +2,10 @@
 
 exports[`Search bar has a valid snapshot 1`] = `
 <div
-  className="sc-bdVaJa dwPHur"
+  className="sc-bdVaJa dTdotJ"
 >
   <input
-    className="sc-bwzfXH iTeFPl"
+    className="sc-bwzfXH bnZZpQ"
     onBlur={undefined}
     onChange={undefined}
     onClick={undefined}
@@ -14,7 +14,7 @@ exports[`Search bar has a valid snapshot 1`] = `
     value={undefined}
   />
   <button
-    className="sc-htpNat iBCGpI"
+    className="sc-htpNat gAYoDj"
     disabled={false}
     onClick={[Function]}
     type="button"

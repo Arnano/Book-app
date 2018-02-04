@@ -2,7 +2,7 @@
 
 exports[`Button has a valid snapshot 1`] = `
 <button
-  className="sc-bdVaJa jZlEjC"
+  className="sc-bdVaJa irJKAQ"
   disabled={false}
   onClick={[Function]}
   type="button"

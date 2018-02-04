@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Image has a valid snapshot 1`] = `
+<img
+  alt="Placeholder"
+  className="sc-bdVaJa bKjKWq"
+  src="http://via.placeholder.com/350x150"
+/>
+`;
+
+exports[`Image link has a valid snapshot 1`] = `
+<a
+  className="sc-bwzfXH kihqCD"
+  href="https://google.com"
+>
+  <img
+    alt="Placeholder"
+    className="sc-bdVaJa bKjKWq"
+    src="http://via.placeholder.com/350x150"
+  />
+</a>
+`;

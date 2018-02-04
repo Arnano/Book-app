@@ -4,38 +4,32 @@ import renderer from 'react-test-renderer';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import Books from './';
+import BooksInfo from './';
 
 Enzyme.configure({
   adapter: new Adapter()
 }); 
 
-describe('Books', () => {
+describe('Books info', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <Books 
-        alt={'img'} 
+      <BooksInfo 
         author={'Arnaud'}
         category={'Fantasy'}
         description={'Book about fantasy'}
-        link={'https://google.com'}
         rating={3}
-        src={'#'}
         title={'Terrendiul'} /> , div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   test('has a valid snapshot', () => {
     const component = renderer.create(
-      <Books 
-      alt={'img'} 
+      <BooksInfo 
       author={'Arnaud'}
       category={'Fantasy'}
       description={'Book about fantasy'}
-      link={'https://google.com'}
       rating={3}
-      src={'#'}
       title={'Terrendiul'} />
     );
     let tree = component.toJSON();

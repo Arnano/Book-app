@@ -1,9 +1,9 @@
 import Styled from 'styled-components';
-import { blue, grey } from '../../Style/colors';
+import { blue, darkBlue } from '../../Style/colors';
 
 const StyledButton = Styled.button `
-  border: 1px solid ${blue};
-  background: ${grey};
+  border: 1px solid ${darkBlue};
+  background: ${blue};
   padding: 5px 0;
   border-radius: 4px;
   cursor: pointer;
