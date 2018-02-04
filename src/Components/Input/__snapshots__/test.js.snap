@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input has a valid snapshot 1`] = `
+<input
+  className="sc-bdVaJa mnJkf"
+  onBlur={undefined}
+  onChange={undefined}
+  onClick={undefined}
+  placeholder=""
+  type="text"
+  value={undefined}
+/>
+`;
