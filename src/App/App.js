@@ -3,12 +3,18 @@ import logo from './../logo.svg';
 import './App.css';
 
 import fetch from 'isomorphic-fetch';
+import spinner from '../Style/spinner.svg';
 
 import SearchBar from '../Components/SearchBar';
+import BooksTable from '../Components/BooksTable';
+import Books from '../Components/Books';
+import Loading from '../Components/Loading';
+import { ImageLinkNewWindow } from '../Components/Image';
 
 import {
   PATH_BASE,
-  PARAM_SEARCH
+  PARAM_SEARCH,
+  DEFAULT_QUERY
 } from '../Constants/apiConstants';
 
 class App extends Component {
@@ -19,14 +25,13 @@ class App extends Component {
       books: null,
       error: null,
       isFetching: false,
-      searchTerm: 'The lord of the ring'
+      searchTerm: DEFAULT_QUERY
     }
 
     this.fetchBooks = this.fetchBooks.bind(this);
     this.storesFetchedBooks = this.storesFetchedBooks.bind(this);
-
     this.onInputChange = this.onInputChange.bind(this);
-    this.onClick = this.onClick.bind(this);
+    this.onSearchClick = this.onSearchClick.bind(this);
   }
 
   /**
@@ -71,8 +76,8 @@ class App extends Component {
     this.setState({ searchTerm: e.target.value });
   }
 
-  onClick() {
-    console.log('hey');
+  onSearchClick() {
+    this.fetchBooks(this.state.searchTerm);
   }
 
   render() {
@@ -95,20 +100,28 @@ class App extends Component {
           <SearchBar
             onChange={this.onInputChange}
             value={searchTerm}
-            onClick={this.onClick}>
+            onClick={this.onSearchClick}>
               Search
           </SearchBar>
           { isFetching 
-            ? <div> Searching your books... </div> 
+            ? <Loading icon={spinner}> Searching your books... </Loading> 
             : (
-              books.map((book) => {
-                return(
-                  <div key={book.id}>
-                    <span> {book.volumeInfo.title} </span>
-                    <img src={book.volumeInfo.imageLinks.thumbnail} />
-                  </div>
-                )
-              })
+              <BooksTable>
+                { books.map((book) => {
+                  return(
+                    <Books key={book.id}
+                      alt={book.volumeInfo.title && book.volumeInfo.title}
+                      author={book.volumeInfo.authors && book.volumeInfo.authors}
+                      category={book.volumeInfo.categories && book.volumeInfo.categories}
+                      description={book.volumeInfo.description && book.volumeInfo.description}
+                      link={book.volumeInfo.canonicalVolumeLink && book.volumeInfo.canonicalVolumeLink}
+                      rating={book.volumeInfo.averageRating && book.volumeInfo.averageRating}
+                      src={book.volumeInfo.imageLinks.thumbnail && book.volumeInfo.imageLinks.thumbnail}
+                      title={book.volumeInfo.title && book.volumeInfo.title} />
+                  )
+                })
+              }
+              </BooksTable>
             )
           }
       </div>
