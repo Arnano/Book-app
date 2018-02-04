@@ -66,7 +66,7 @@
   }
 
   html {
-    color: '#E6E6E7';
+    color: '#55565A';
     font-size: 10px;
     font-family: sans-serif;
     text-size-adjust: 100%;
@@ -78,28 +78,28 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
-    color: '#E6E6E7';
+    color: '#55565A';
   }
 
   @font-face {
-    font-family: 'Risque';
+    font-family: 'Merriweather', 'serif';
     font-style: normal;
     font-weight: 300;
-    src: url("https://fonts.googleapis.com/css?family=Risque");
+    src: url("https://fonts.googleapis.com/css?family=Merriweather");
   }
 
   @font-face {
-    font-family: 'Risque';
+    font-family: 'Merriweather', 'serif';
     font-style: normal;
-    font-weight: 400;
-    src: url("https://fonts.googleapis.com/css?family=Risque");
+    font-weight: 700;
+    src: url("https://fonts.googleapis.com/css?family=Merriweather:700");
   }
 
   @font-face {
-    font-family: 'Risque';
+    font-family: 'Merriweather', 'serif';
     font-style: normal;
-    font-weight: 500;
-    src: url("https://fonts.googleapis.com/css?family=Risque");
+    font-weight: 900;
+    src: url("https://fonts.googleapis.com/css?family=Merriweather:900");
   }
 
   @font-face {

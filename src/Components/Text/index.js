@@ -15,7 +15,7 @@ const Text = ({ children, classes, color, size, weight }) =>
 
 Text.defaultProps = {
   classes: '',
-  color: 'grey',
+  color: 'darkGrey',
   size: 'fsMedium',
   weight: 'fwMedium'
 };

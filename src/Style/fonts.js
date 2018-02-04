@@ -3,7 +3,7 @@ import { blue, darkBlue } from './colors';
 import { fontSize } from './mixins';
 import { fromSmall } from './media';
 
-export const primary = 'Risque, "Helvetica Neue", Helvetica, Arial, sans-serif';
+export const primary = 'Merriweather, serif';
 export const secondary = 'Crimson Text, "Helvetica Neue", Helvetica, Arial, sans-serif';
 export const fwSmall = '300';
 export const fwMedium = '400';
