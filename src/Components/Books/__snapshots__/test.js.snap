@@ -20,17 +20,31 @@ exports[`Books has a valid snapshot 1`] = `
     className="sc-bxivhb eBNJKg"
   >
     <div>
-      <h1>
+      <h1
+        className="sc-gzVnrw eikHWq"
+        color="darkGrey"
+        id={undefined}
+        size="h1"
+      >
          
         Terrendiul
          
       </h1>
-      <h2>
+      <h2
+        className="sc-htoDjs idWuAl"
+        color="darkGrey"
+        id={undefined}
+        size="h2"
+      >
          
         Arnaud
          
       </h2>
-      <span>
+      <span
+        className="sc-ifAKCX DlCuJ"
+        color="darkGrey"
+        size="fsLarge"
+      >
          rating: 
         3
          
@@ -38,10 +52,22 @@ exports[`Books has a valid snapshot 1`] = `
     </div>
     <p>
        
-      Book about fantasy
+      <span
+        className="sc-ifAKCX bbNYVw"
+        color="darkGrey"
+        size="fsMedium"
+      >
+         
+        Book about fantasy
+         
+      </span>
        
     </p>
-    <span>
+    <span
+      className="sc-ifAKCX bbNYVw"
+      color="darkGrey"
+      size="fsMedium"
+    >
        Category: 
       Fantasy
        

@@ -2,9 +2,9 @@
 
 exports[`Text has a valid snapshot 1`] = `
 <span
-  className="sc-bdVaJa iDNMkM"
-  color="grey"
-  size="fsSMall"
+  className="sc-bdVaJa gOaQWy"
+  color="darkGrey"
+  size="fsSmall"
 >
    Text 
 </span>

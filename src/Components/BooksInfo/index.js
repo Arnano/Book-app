@@ -7,12 +7,12 @@ import Heading from '../Heading';
 const BooksInfo = ({ author, category, classes, description, rating, title }) => 
   <StyledBooksInfo className={classes} >
     <div>
-      <Heading level={1}> {title} </Heading>
-      <Heading level={2}> {author} </Heading>
+      <Heading level={1} size='h1'> {title} </Heading>
+      <Heading level={2} size='h2'> {author} </Heading>
       { rating && <Text size='fsLarge'> rating: {rating} </Text> }
     </div>
-    { description && <p> {description} </p> }
-    { category && <Text size='fsSmall'> Category: {category} </Text> }
+    { description && <p> <Text size='fsMedium'> {description} </Text> </p> }
+    { category && <Text size='fsMedium'> Category: {category} </Text> }
   </StyledBooksInfo >
 
 BooksInfo.propTypes = {

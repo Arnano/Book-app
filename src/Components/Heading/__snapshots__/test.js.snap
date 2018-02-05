@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading has a valid snapshot 1`] = `
+<h1
+  className="sc-bwzfXH hONpvi"
+  color="darkGrey"
+  id={undefined}
+  size="h1"
+>
+   Heading 
+</h1>
+`;

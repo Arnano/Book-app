@@ -19,7 +19,8 @@ const Heading = ({ center, children, classes, color, id, level, size, weight }) 
 };
 
 Heading.defaultProps = {
-  color: 'darkGrey'
+  color: 'darkGrey',
+  center: false
 };
 
 Heading.propTypes = {

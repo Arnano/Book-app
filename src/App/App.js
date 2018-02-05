@@ -10,6 +10,9 @@ import Books from '../Components/Books';
 import Loading from '../Components/Loading';
 import Image, { ImageLinkNewWindow } from '../Components/Image';
 
+import Heading from '../Components/Heading';
+import Text from '../Components/Text';
+
 import {
   PATH_BASE,
   PARAM_SEARCH,
@@ -100,15 +103,15 @@ class App extends Component {
             onChange={this.onInputChange}
             value={searchTerm}
             onClick={this.onSearchClick}>
-              Search
+             <Text> Search </Text>
           </SearchBar>
           { isFetching 
-            ? <Loading icon={spinner}> <span> Searching your books.. </span> </Loading> 
+            ? <Loading icon={spinner}> <Heading level={4} size='h4'> Searching your books.. </Heading> </Loading> 
             : (
               <BooksTable>
                 { books.map((book) => {
                   return(
-                    <Books key={book.id}
+                    <Books key={`book--${book.id}`}
                       alt={book.volumeInfo.title && book.volumeInfo.title}
                       author={book.volumeInfo.authors && book.volumeInfo.authors}
                       category={book.volumeInfo.categories && book.volumeInfo.categories}

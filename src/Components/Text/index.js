@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { keys } from 'ramda';
+import { keys } from 'lodash';
 import * as colors from '../../Style/colors';
 import StyledText from './style';
 
@@ -14,6 +14,7 @@ const Text = ({ children, classes, color, size, weight }) =>
   </StyledText>
 
 Text.defaultProps = {
+  align: 'left',
   classes: '',
   color: 'darkGrey',
   size: 'fsMedium',
@@ -23,7 +24,7 @@ Text.defaultProps = {
 Text.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.string,
-  color: PropTypes.oneOf(keys(colors)),
+  color: PropTypes.oneOf([...keys(colors)]),
   size: PropTypes.oneOf(['fsSmall', 'fsMedium', 'fsLarge']).isRequired,
   weight: PropTypes.oneOf(['fwSmall', 'fwMedium', 'fwLarge'])
 };

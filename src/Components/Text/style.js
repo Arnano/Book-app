@@ -10,7 +10,7 @@ const StyledText = styled.span`
     fsLarge
   })};
 
-  font-weight: ${switchProp('weight', {
+  ${switchProp('weight', {
     fwSmall,
     fwMedium,
     fwLarge
