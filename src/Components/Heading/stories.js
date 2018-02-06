@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { wwithInfo, withInfo } from '@storybook/addon-info';
-import { withKnobs, text, select, bool } from '@storybook/addon-knobs';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 import * as colors from '../../Style/colors';
 import { keys } from 'lodash';
@@ -14,6 +14,13 @@ const selectSize = {
   h2: 'h2',
   h3: 'h3',
   h4: 'h4'
+};
+
+const range = {
+  1: 'h1',
+  2: 'h2',
+  3: 'h3',
+  4: 'h4'
 };
 
 const selectWeight = {
@@ -33,10 +40,9 @@ storiesOf('UI Component', module)
   }) (() =>
     <Heading
       children={text('Heading: ', 'Heading Sample Text')}
-      size={select('Font size: ', selectSize)}
-      size={1}
+      size={select('Font size: ', selectSize)} 
+      level={select('Level', range, 1)}
       weight={select('Font weight: ', selectWeight)}
-      center={bool('Center: ', false)}
       color={select('Color: ', selectColors)} />
   )
 )

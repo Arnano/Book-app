@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { wwithInfo, withInfo } from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, select } from '@storybook/addon-knobs';
 
 import * as colors from '../../Style/colors';

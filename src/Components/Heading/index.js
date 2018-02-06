@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { keys } from 'lodash';
 
+import * as colors from '../../Style/colors';
 import buildHeading from './style';
 
 const Heading = ({ center, children, classes, color, id, level, size, weight }) => {
@@ -27,7 +29,7 @@ Heading.propTypes = {
   center: PropTypes.bool,
   children: PropTypes.node.isRequired,
   classes: PropTypes.string,
-  color: PropTypes.oneOf(['darkGrey', 'blue']),
+  color: PropTypes.oneOf([...keys(colors)]),
   id: PropTypes.string,
   level: PropTypes.oneOf([1, 2, 3, 4]).isRequired,
   size: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4']).isRequired,

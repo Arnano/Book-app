@@ -3,20 +3,26 @@ import PropTypes from 'prop-types';
 import StyledBooks from './style';
 import { ImageLinkNewWindow } from '../Image';
 import BooksInfo from '../BooksInfo';
+import { Row, Col } from '../Grid';
 
 const Books = ({ alt, author, category, classes, description, link, rating, src, title }) =>
   <StyledBooks className={classes}>
-    <ImageLinkNewWindow
-      alt={alt}
-      link={link}
-      src={src} />
-    <BooksInfo 
-      author={author}
-      rating={rating}
-      title={title}
-      description={description}
-      category={category}
-    />
+    <Row>
+      <Col sm={2}>
+        <ImageLinkNewWindow
+          alt={alt}
+          link={link}
+          src={src} />
+      </Col>
+      <Col sm={10}>
+        <BooksInfo 
+          author={author}
+          rating={rating}
+          title={title}
+          description={description}
+          category={category} />
+      </Col>
+    </Row>
   </StyledBooks>
 
 Books.propTypes = {

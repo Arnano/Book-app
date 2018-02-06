@@ -20,6 +20,7 @@ export const fsSmall = css`
   font-family: ${primary};
   ${fontSize('12','16')};
   font-style: normal;
+  font-weight: ${fwMedium};
 `;
 
 export const fsMedium = css`
@@ -27,6 +28,7 @@ export const fsMedium = css`
   font-family: ${primary};
   ${fontSize('14','18')};
   font-style: normal;
+  font-weight: ${fwMedium};
 `;
 
 export const fsLarge = css`
@@ -34,6 +36,7 @@ export const fsLarge = css`
   font-family: ${primaryLarge};
   ${fontSize('16','24')};
   font-style: normal;
+  font-weight: ${fwMedium};
 `;
 
 export const h1 = css`

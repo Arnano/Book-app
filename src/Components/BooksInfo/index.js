@@ -1,18 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledBooksInfo from './style';
+
+import Section from '../Section';
 import Text from '../Text';
 import Heading from '../Heading';
 
 const BooksInfo = ({ author, category, classes, description, rating, title }) => 
   <StyledBooksInfo className={classes} >
-    <div>
-      <Heading level={1} size='h1'> {title} </Heading>
-      <Heading level={2} size='h2'> {author} </Heading>
-      { rating && <Text size='fsLarge'> rating: {rating} </Text> }
-    </div>
-    { description && <p> <Text size='fsMedium'> {description} </Text> </p> }
-    { category && <Text size='fsMedium'> Category: {category} </Text> }
+    <Section>
+      <Heading level={2} size='h2'> {title} </Heading>
+      <Heading level={3} size='h3'> {author} </Heading>
+      { rating && <Text size='fsMedium'> rating: {rating} </Text> }
+    </Section>
+    <Section alignment='center' >
+      { description && <p> <Text size='fsSmall'> {description} </Text> </p> }
+      { category && <Text size='fsSmall'> Category: {category} </Text> }
+    </Section>
   </StyledBooksInfo >
 
 BooksInfo.propTypes = {
