@@ -12,6 +12,7 @@ const StyledBooksTable = Styled.ul `
   box-shadow: ${shadow};
   transition: box-shadow 0.3s ease;
   padding: 0;
+  list-style: none;
 
   a > &:hover {
     cursor: pointer;
