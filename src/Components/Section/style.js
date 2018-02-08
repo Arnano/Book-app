@@ -1,5 +1,5 @@
 import Styled from 'styled-components';
-import { ifProp, switchProp } from 'styled-tools';
+import { switchProp } from 'styled-tools';
 
 import * as colors from '../../Style/colors';
 import { lg, md, sm } from '../../Style/spacing';

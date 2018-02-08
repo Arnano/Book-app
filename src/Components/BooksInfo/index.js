@@ -5,8 +5,9 @@ import StyledBooksInfo from './style';
 import Section from '../Section';
 import Text from '../Text';
 import Heading from '../Heading';
+import Button from '../Button';
 
-const BooksInfo = ({ author, category, classes, description, rating, title }) => 
+const BooksInfo = ({ author, category, classes, description, rating, title, onClick, buttonText }) => 
   <StyledBooksInfo className={classes} >
     <Section>
       <Heading level={2} size='h2'> {title} </Heading>
@@ -16,6 +17,7 @@ const BooksInfo = ({ author, category, classes, description, rating, title }) =>
     <Section alignment='center' >
       { description && <p> <Text size='fsSmall'> {description} </Text> </p> }
       { category && <Text size='fsSmall'> Category: {category} </Text> }
+      <Button onClick={onClick}> {buttonText} </Button>
     </Section>
   </StyledBooksInfo >
 

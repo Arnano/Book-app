@@ -2,7 +2,7 @@
  * Store all the function/mixins helpers needed for styled component
  */
 
-import { baseline } from '../Constants/style';
+import { baseline } from '../Helpers/style';
 
 // Mixin to convert a font-size from px to rem
 // Uses a baseline of 10

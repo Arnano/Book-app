@@ -6,9 +6,10 @@ import bookImg from '../Style/assets/book_3.jpg';
 import SearchBar from '../Components/SearchBar';
 import BooksTable from '../Components/BooksTable';
 import Books from '../Components/Books';
-import Image, { ImageLinkNewWindow } from '../Components/Image';
-
-import Heading from '../Components/Heading';
+import { ImageLinkNewWindow } from '../Components/Image';
+import Button from '../Components/Button';
+import Section from '../Components/Section';
+import { Row, Col } from '../Components/Grid';
 import Text from '../Components/Text';
 
 import {
@@ -28,6 +29,7 @@ class App extends Component {
 
     this.state = {
       books: null,
+      readList: null,
       error: null,
       isFetching: false,
       searchTerm: DEFAULT_QUERY
@@ -85,6 +87,16 @@ class App extends Component {
     this.fetchBooks(this.state.searchTerm);
   }
 
+  onAddBook(book) {
+    const { readList } = this.state;
+
+    const updatedBook = book.volumeInfo.title;
+    const updatedAuthor = book.volumeInfo.authors;
+    this.setState({ readList: {...readList, [book.id]: { updatedBook, updatedAuthor } }});
+
+    console.log(readList);
+  }
+
   render() {
     const { 
       searchTerm, 
@@ -99,10 +111,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Image src={bookImg} alt={'Book banner'} />
+          <ImageLinkNewWindow src={bookImg} alt={'Book banner'} />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         
+        <Row>
+          <Col sm={8}>
+          <Section>
           <SearchBar
             onChange={this.onInputChange}
             value={searchTerm}
@@ -113,6 +128,7 @@ class App extends Component {
           <WithFetchingBooks isFetching={isFetching} >
             { books.map((book) => {
               return(
+                <Section >
                 <Books key={`book--${book.id}`}
                   alt={book.volumeInfo.title && book.volumeInfo.title}
                   author={book.volumeInfo.authors && book.volumeInfo.authors}
@@ -121,11 +137,20 @@ class App extends Component {
                   link={book.volumeInfo.canonicalVolumeLink && book.volumeInfo.canonicalVolumeLink}
                   rating={book.volumeInfo.averageRating && book.volumeInfo.averageRating}
                   src={book.volumeInfo.imageLinks.thumbnail && book.volumeInfo.imageLinks.thumbnail}
-                  title={book.volumeInfo.title && book.volumeInfo.title} />
+                  title={book.volumeInfo.title && book.volumeInfo.title} 
+                  onClick={() => this.onAddBook(book)}
+                  buttonText='Add to read list' />
+                </Section>
                 )
               })
             }
           </WithFetchingBooks >
+          </Section>
+          </Col>
+          <Col sm={4} >
+            <div> You'rs selected books go here </div>
+          </Col>
+          </Row>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import Styled from 'styled-components';
 import { grey } from '../../Style/colors';
-import { shadow } from '../../Constants/style';
+import { shadow } from '../../Helpers/style';
 
 const StyledBooksTable = Styled.ul `
   max-width: 960px;

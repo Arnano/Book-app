@@ -5,7 +5,7 @@ import { ImageLinkNewWindow } from '../Image';
 import BooksInfo from '../BooksInfo';
 import { Row, Col } from '../Grid';
 
-const Books = ({ alt, author, category, classes, description, link, rating, src, title }) =>
+const Books = ({ alt, author, category, classes, description, link, rating, src, title, onClick, buttonText }) =>
   <StyledBooks className={classes}>
     <Row>
       <Col sm={2}>
@@ -15,7 +15,9 @@ const Books = ({ alt, author, category, classes, description, link, rating, src,
           src={src} />
       </Col>
       <Col sm={10}>
-        <BooksInfo 
+        <BooksInfo
+          onClick={onClick}
+          buttonText={buttonText}
           author={author}
           rating={rating}
           title={title}

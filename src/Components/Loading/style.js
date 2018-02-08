@@ -1,7 +1,6 @@
-import Styled, { keyframes } from 'styled-components';
+import Styled from 'styled-components';
 import { grey } from '../../Style/colors';
-import { shadow, spinning } from '../../Constants/style';
-import { center } from '../../Style/mixins';
+import { shadow, spinning } from '../../Helpers/style';
 
 const StyledLoading = Styled.div `
   display: flex;
