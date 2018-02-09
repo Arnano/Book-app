@@ -7,6 +7,8 @@ const StyledInput = Styled.input `
   width: 300px;
   padding: 8px 0;
   border-radius: 4px;
+  font-size: 20px;
+  line-height: 5px;
 `;
 
 export default StyledInput;

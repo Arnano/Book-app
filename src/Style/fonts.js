@@ -5,7 +5,7 @@ import { fromSmall } from './media';
 
 export const primary = 'Comfortaa, cursive';
 export const primaryLarge = 'Comfortaa-large, cursive';
-export const secondary = 'Ubuntu, sans-serif';
+export const secondary = 'Raleway, sans-serif';
 export const fwSmall = '300';
 export const fwMedium = '400';
 export const fwLarge = '500';

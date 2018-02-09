@@ -9,6 +9,12 @@ const StyledSearchBar = Styled.div `
   margin: 20px auto 20px 10px;
   border-radius: 4px;
 
+  & img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+
   & input {
     flex-grow: 2;
     width: 70%;
@@ -18,6 +24,7 @@ const StyledSearchBar = Styled.div `
     border-bottom: 0;
     border-top: 0;
     border-right: 1px solid ${darkBlue};
+    margin-left: 10px;
   }
 
   & button {
