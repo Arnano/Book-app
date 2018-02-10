@@ -20,10 +20,10 @@ const ImageLinkNewWindow = ({ alt, classes, link, rel, src, target }) =>
   <StyledImageLink 
     href={link}
     rel={rel}
+    className={classes} 
     target={target} >
       <StyledImage
         alt={alt}
-        className={classes} 
         src={src} />
   </StyledImageLink>
 

@@ -7,14 +7,6 @@ import { Row, Col } from '../Grid';
 
 const Books = ({ alt, author, category, classes, description, link, rating, src, title, onClick, buttonText }) =>
   <StyledBooks className={classes}>
-    <Row>
-      <Col sm={2}>
-        <ImageLinkNewWindow
-          alt={alt}
-          link={link}
-          src={src} />
-      </Col>
-      <Col sm={10}>
         <BooksInfo
           onClick={onClick}
           buttonText={buttonText}
@@ -22,17 +14,22 @@ const Books = ({ alt, author, category, classes, description, link, rating, src,
           rating={rating}
           title={title}
           description={description}
-          category={category} />
-      </Col>
-    </Row>
+          category={category}
+          alt={alt}
+          link={link}
+          src={src} />
   </StyledBooks>
 
 Books.propTypes = {
   alt: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  category: PropTypes.string,
+  author: PropTypes.arrayOf(
+    PropTypes.string
+  ).isRequired,
+  category: PropTypes.arrayOf(
+    PropTypes.string
+  ),
   classes: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   link: PropTypes.string.isRequired,
   rating: PropTypes.number,
   src: PropTypes.string.isRequired,

@@ -18,6 +18,15 @@ const StyledBooksTable = Styled.ul `
     cursor: pointer;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
   }
+
+  & .c-books-table__book {
+    border-bottom: 1px solid ${grey};
+    min-height: 300px;
+    
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
 `;
 
 export default StyledBooksTable;

@@ -14,6 +14,15 @@ const StyledImageLink = Styled.a `
     opacity: 0.8;
     transition: opacity 0.3s ease;
   }
+
+  &.wrap {
+    float: right;
+    height: 200px;
+
+    & img {
+      height: 200px;
+    }
+  }
 `;
 
 export default StyledImage;

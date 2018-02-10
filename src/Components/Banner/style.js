@@ -1,5 +1,4 @@
 import Styled from 'styled-components';
-import { extraLarge } from '../../Style/media';
 import { maxSize } from '../../Style/mixins';
 
 const StyledBanner = Styled.div`

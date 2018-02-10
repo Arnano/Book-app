@@ -8,13 +8,15 @@ import Image from '../Image';
 import Input from '../Input';
 import Button from '../Button';
 
-const SearchBar = ({ children, onChange, onClick, icon, value}) => 
+const SearchBar = ({ children, disabled, onChange, onClick, onFocus, icon, value}) => 
   <StyledSearchBar>
     <Image classes='c-search-bar__icon' src={growth} alt='searchIcon' />
     <Input
       onChange={onChange}
+      onFocus={onFocus}
       value={value} />
     <Button
+      disabled={disabled}
       onClick={onClick} >
       {children}
     </Button>

@@ -1,5 +1,6 @@
 import Styled from 'styled-components';
 import { darkBlue } from '../../Style/colors';
+import { primary } from '../../Style/fonts';
 
 const StyledInput = Styled.input `
   border: 1px solid ${darkBlue};
@@ -9,6 +10,8 @@ const StyledInput = Styled.input `
   border-radius: 4px;
   font-size: 20px;
   line-height: 5px;
+  font-family: ${primary};
+  font-style: italic;
 `;
 
 export default StyledInput;

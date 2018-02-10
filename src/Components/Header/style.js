@@ -2,7 +2,7 @@ import Styled from 'styled-components';
 
 import { blue } from '../../Style/colors';
 import { center, size, maxSize } from '../../Style/mixins';
-import { fromExtraSmall, fromSmall, fromMedium, fromLarge, extraLarge } from '../../Style/media';
+import { fromExtraSmall, fromSmall, fromMedium, fromLarge } from '../../Style/media';
 
 const padding = 20;
 const font_size = 36;

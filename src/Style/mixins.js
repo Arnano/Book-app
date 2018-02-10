@@ -233,7 +233,7 @@ export function position(position, args) {
   for (let o in directions) {
     let i = argsArray.indexOf(directions[o]);
     if (i > -1 && ((i + 1) <= argsArray.length)) {
-      let value = parseInt(argsArray[i + 1]) < 0 ? 'auto' : argsArray[i + 1];
+      let value = parseInt(argsArray[i + 1], 1) < 0 ? 'auto' : argsArray[i + 1];
       output.push(`${directions[o]}: ${value};`)
     }
   }
@@ -263,14 +263,14 @@ export function triangle(color, direction, size = '6px', position = 'absolute', 
     triangle = `
       ${border(`${size} solid`, 'transparent', 'left right')}
       ${border(`${size} solid`, color, 'top')}
-      ${margin(`${0 - Math.round(parseInt(size) / 2.5)}px`, null, null)}
+      ${margin(`${0 - Math.round(parseInt(size, 1) / 2.5)}px`, null, null)}
     `;
   }
   else if (direction === 'up') {
     triangle = `
       ${border(`${size} solid`, 'transparent', 'left right')}
       ${border(`${size} solid`, color, 'bottom')};
-      ${margin(null, null, `${0 - Math.round(parseInt(size) / 2.5)}px`)}
+      ${margin(null, null, `${0 - Math.round(parseInt(size, 1) / 2.5)}px`)}
     `;
   }
   else if (direction === 'right') {

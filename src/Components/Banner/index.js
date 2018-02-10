@@ -16,17 +16,17 @@ Banner.defaultProps = {
 }
 
 Banner.propTypes = {
-  // image: PropTypes.shape({
-  //   sources: PropTypes.array(
-  //     PropTypes.shape({
-  //       srcSet: PropTypes.string,
-  //       media: PropTypes.string,
-  //       type: PropTypes.string
-  //     })
-  //   ),
-  //   src: PropTypes.string,
-  //   alt: PropTypes.string
-  // }).isRequired,
+  image: PropTypes.shape({
+    sources: PropTypes.arrayOf(
+      PropTypes.shape({
+        srcSet: PropTypes.string,
+        media: PropTypes.string,
+        type: PropTypes.string
+      })
+    ),
+    src: PropTypes.string,
+    alt: PropTypes.string
+  }).isRequired,
   overlay: PropTypes.bool
 }
 

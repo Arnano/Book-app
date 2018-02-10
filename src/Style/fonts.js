@@ -3,9 +3,12 @@ import { blue, darkBlue } from './colors';
 import { fontSize } from './mixins';
 import { fromSmall } from './media';
 
-export const primary = 'Comfortaa, cursive';
-export const primaryLarge = 'Comfortaa-large, cursive';
-export const secondary = 'Raleway, sans-serif';
+// export const primary = 'Lustria, serif';
+export const primary = 'Spinnaker, sans-serif';
+export const primaryLarge = 'Spinnaker, sans-serif';
+// export const secondary = 'Marcellus, serif';
+export const secondary = 'Taviraj, serif';
+
 export const fwSmall = '300';
 export const fwMedium = '400';
 export const fwLarge = '500';

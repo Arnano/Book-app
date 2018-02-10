@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledInput from './style';
 
-const Input = ({ classes, onBlur, onChange, onClick, type, placeholder, value }) => 
+const Input = ({ classes, onBlur, onChange, onFocus, onClick, type, placeholder, value }) => 
   <StyledInput
     className={classes}
     onBlur={onBlur}
+    onFocus={onFocus}
     onChange={onChange}
     onClick={onClick}
     type={type}
@@ -21,6 +22,7 @@ Input.defaultProps = {
 Input.propTypes = {
   classes: PropTypes.string,
   onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   type: PropTypes.string,

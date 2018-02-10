@@ -3,7 +3,6 @@ import _ from 'lodash';
 import fetch from 'isomorphic-fetch';
 import { bookImage } from '../Style/assets/book-imgs.js';
 
-import Icon from '../Components/Icon';
 import AppWrapper from '../Components/AppWrapper';
 import Card from '../Components/Card';
 import Header from '../Components/Header';
@@ -11,13 +10,11 @@ import Banner from '../Components/Banner';
 import SearchBar from '../Components/SearchBar';
 import BooksTable from '../Components/BooksTable';
 import Books from '../Components/Books';
-import { ImageLinkNewWindow } from '../Components/Image';
 import Button from '../Components/Button';
 import Heading from '../Components/Heading';
 import Section from '../Components/Section';
 import { Row, Col } from '../Components/Grid';
 import Text from '../Components/Text';
-import Image from '../Components/Image';
 
 import {
   PATH_BASE,
@@ -29,7 +26,6 @@ import {
   withFetching,
   withCondition
 } from '../Helpers/hoc-components';
-import { readlink } from 'fs';
 
 const WithFetchingBooks = withFetching(BooksTable);
 const WithConditionCard = withCondition(Card);
@@ -40,6 +36,7 @@ class App extends Component {
 
     this.state = {
       books: null,
+      disabled: false,
       readList: null,
       error: null,
       isFetching: false,
@@ -49,6 +46,7 @@ class App extends Component {
     this.fetchBooks = this.fetchBooks.bind(this);
     this.storesFetchedBooks = this.storesFetchedBooks.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
+    this.onInputFocus = this.onInputFocus.bind(this);
     this.onSearchClick = this.onSearchClick.bind(this);
   }
 
@@ -91,7 +89,17 @@ class App extends Component {
    * @param {*} e 
    */
   onInputChange(e) {
-    this.setState({ searchTerm: e.target.value });
+    this.setState({ 
+      searchTerm: e.target.value,
+      disabled: this.state.searchTerm === ''
+    });
+  }
+
+  onInputFocus() {
+    this.setState({ 
+      searchTerm: '',
+      disabled: true
+    });
   }
 
   onSearchClick() {
@@ -105,16 +113,16 @@ class App extends Component {
    * @param {object} book 
    */
   onAddBook(book) {
-    const { readList } = this.state;
-    const { title, authors } = book.volumeInfo;
-    const id = book.id;
+    const { readList, } = this.state;
 
     this.setState({ 
       readList: { 
         ...readList, 
-        [book.id]: { id, title, authors } 
+        [book.id]: book 
       }
     });
+
+    console.log(readList)
   }
 
   /**
@@ -127,11 +135,14 @@ class App extends Component {
     const { readList } = this.state;
     const updatedReadList = _.filter(readList, book => book.id !== id);
 
-    this.setState({ readList: updatedReadList });
+    this.setState({ 
+      readList: updatedReadList
+    });
   }
 
   render() {
-    const { 
+    const {
+      disabled,
       searchTerm, 
       books, 
       isFetching, 
@@ -171,17 +182,19 @@ class App extends Component {
               {/* Search component */}
               <SearchBar
                 onChange={this.onInputChange}
+                onFocus={this.onInputFocus}
                 value={searchTerm}
+                disabled={disabled}
                 onClick={this.onSearchClick} >
-                  <Text> Search </Text>
+                  <Text size='fsLarge'> SEARCH </Text>
               </SearchBar>
 
               {/* Book listing after search components */}
               <WithFetchingBooks isFetching={isFetching} >
                 { books.map((book) => {
                   return(
-                    <Section >
-                      <Books key={`book--${book.id}`}
+                    <Section classes='c-books-table__book' key={`book--${book.id}`} >
+                      <Books
                         alt={book.volumeInfo.title && book.volumeInfo.title}
                         author={book.volumeInfo.authors && book.volumeInfo.authors}
                         category={book.volumeInfo.categories && book.volumeInfo.categories}
@@ -206,10 +219,10 @@ class App extends Component {
                 _.map(readList, (book) => {
                   return(
                     <Section key={`readList--${book.id}`} >
-                      <Text size='fsSmall' > { book.title } </Text>
-                      <Text size='fsSmall' > { book.authors } </Text>
-                      <Button onClick={() => this.onRemoveBook(book.id)} >
-                        Remove book
+                      <Text size='fsSmall' > { book.volumeInfo.title } </Text>
+                      <Text size='fsSmall' > { book.volumeInfo.authors } </Text>
+                      <Button onClick={() => this.onRemoveBook(book.id)} btnStyle='danger' >
+                        <Text size='fsLarge'> Remove book </Text >
                       </Button>
                     </Section >
                   )

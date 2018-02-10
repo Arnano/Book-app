@@ -81,17 +81,4 @@
     color: '#55565A';
   }
 
-  @font-face {
-    font-family: 'Comfortaa', 'cursive';
-    src: url("https://fonts.googleapis.com/css?family=Comfortaa");
-  }
-
-  @font-face {
-    font-family: 'Comfortaa-large', 'cursive';
-    src: url("https://fonts.googleapis.com/css?family=Comfortaa:700");
-  }
-
-  @font-face {
-    font-family: 'Raleway', 'sans-serif';
-    src: url("https://fonts.googleapis.com/css?family=Raleway");
-  }
+  @import url('https://fonts.googleapis.com/css?family=Taviraj|Spinnaker');
